@@ -1,0 +1,52 @@
+<%= form_with(model: citum, local: true) do |form| %>
+  <% if citum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(citum.errors.count, "error") %> prohibited this citum from being saved:</h2>
+
+      <ul>
+        <% citum.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :consultorio %>
+    <%= form.number_field :consultorio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :paciente %>
+    <%= form.number_field :paciente %>
+  </div>
+
+  <div class="field">
+    <%= form.label :medico %>
+    <%= form.number_field :medico %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fechaCita %>
+    <%= form.date_select :fechaCita %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horaInicio %>
+    <%= form.time_select :horaInicio %>
+  </div>
+
+  <div class="field">
+    <%= form.label :horaFin %>
+    <%= form.time_select :horaFin %>
+  </div>
+
+  <div class="field">
+    <%= form.label :motivoCita %>
+    <%= form.text_field :motivoCita %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

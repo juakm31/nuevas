@@ -1,0 +1,42 @@
+<%= form_with(model: medico, local: true) do |form| %>
+  <% if medico.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(medico.errors.count, "error") %> prohibited this medico from being saved:</h2>
+
+      <ul>
+        <% medico.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nombres %>
+    <%= form.text_field :nombres %>
+  </div>
+
+  <div class="field">
+    <%= form.label :apellidos %>
+    <%= form.text_field :apellidos %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numeroIdentificacion %>
+    <%= form.number_field :numeroIdentificacion %>
+  </div>
+
+  <div class="field">
+    <%= form.label :numeroCelular %>
+    <%= form.number_field :numeroCelular %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tipoMedico %>
+    <%= form.text_field :tipoMedico %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
