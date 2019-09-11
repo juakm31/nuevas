@@ -1,15 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Consultorios</h1>
+<h1 style="text-align: center">Consultorios</h1>
 
-<table>
+<table border="1" style="margin: 0 auto">
   <thead>
     <tr>
       <th>Nombre</th>
       <th>Codigo</th>
       <th>Ubicacion</th>
       <th>Tipoconsultorio</th>
-      <th colspan="3"></th>
+      <th colspan="3">Opciones</th>
     </tr>
   </thead>
 
@@ -20,9 +20,9 @@
         <td><%= consultorio.codigo %></td>
         <td><%= consultorio.ubicacion %></td>
         <td><%= consultorio.tipoConsultorio %></td>
-        <td><%= link_to 'Show', consultorio %></td>
-        <td><%= link_to 'Edit', edit_consultorio_path(consultorio) %></td>
-        <td><%= link_to 'Destroy', consultorio, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', consultorio %></td>
+        <td><%= link_to 'Editar', edit_consultorio_path(consultorio) %></td>
+        <td><%= link_to 'Destruir', consultorio, method: :delete, data: { confirm: '¿Esta Seguro?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,6 @@
 
 <br>
 
-<%= link_to 'New Consultorio', new_consultorio_path %>
+<p style="text-align: center">
+<%= link_to 'Nuevo Consultorio', new_consultorio_path %>
+</p>
